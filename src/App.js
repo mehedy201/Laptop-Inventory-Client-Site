@@ -7,6 +7,8 @@ import Blog from './Pages/Blog/Blog';
 import Add from './Pages/Add/Add';
 import SingIn from './Pages/SingIn/SingIn';
 import Footer from './Shaerd/Footer/Footer';
+import Manage from './Pages/Manage/Manage';
+import MyItem from './Pages/MyItem/MyItem';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/blog' element={<Blog></Blog>}></Route>
           <Route path='/add' element={<Add></Add>}></Route>
+          <Route path='/manage-item' element={<Manage></Manage>}></Route>
+          <Route path='/my-item' element={<MyItem></MyItem>}></Route>
           <Route path='/singIn' element={<SingIn></SingIn>}></Route>
         </Routes>
         <Footer></Footer>
