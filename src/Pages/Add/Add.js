@@ -5,7 +5,7 @@ const Add = () => {
         <div className='container my-5'>
             <div className="row">
                 <div className="col-md-8 mx-auto shadow py-5 px-4 rounded">
-                <h3>Add Your Items</h3>
+                <h3 className='pb-3'>Add Your Items</h3>
                     <form className='border rounded px-3 py-4 bg-light'>
                         <input className='form-control mb-3' type="text" placeholder='Item Title'/>
                         <input className='form-control mb-3' type="email" placeholder='Your Email'/>

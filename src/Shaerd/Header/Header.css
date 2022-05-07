@@ -2,3 +2,6 @@
     height: 55px;
     width: auto;
 }
+.cursor-pointer{
+    cursor: pointer;
+}

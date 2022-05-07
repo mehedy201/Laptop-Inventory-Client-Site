@@ -14,7 +14,7 @@ const SingIn = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className='p-3 my-5 border col-md-6 mx-auto rounded shadow'>
+                <div className='p-3 my-5 col-md-6 mx-auto rounded shadow'>
                  <h2 className='text-center'>Please Log In !!</h2>
                  <p className='text-center'>Please log in and stay with us....</p>
                     <div>
