@@ -37,6 +37,7 @@ function App() {
           }></Route>
           <Route path='/singIn' element={<SingIn></SingIn>}></Route>
           <Route path='/singUp' element={<SingUp></SingUp>}></Route>
+
         </Routes>
         <Footer></Footer>
     </div>
