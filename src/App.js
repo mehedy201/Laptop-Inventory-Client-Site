@@ -9,6 +9,7 @@ import SingIn from './Pages/SingIn/SingIn';
 import Footer from './Shaerd/Footer/Footer';
 import Manage from './Pages/Manage/Manage';
 import MyItem from './Pages/MyItem/MyItem';
+import SingUp from './Pages/SingIn/SingUp/SingUp';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/manage-item' element={<Manage></Manage>}></Route>
           <Route path='/my-item' element={<MyItem></MyItem>}></Route>
           <Route path='/singIn' element={<SingIn></SingIn>}></Route>
+          <Route path='/singUp' element={<SingUp></SingUp>}></Route>
         </Routes>
         <Footer></Footer>
     </div>
