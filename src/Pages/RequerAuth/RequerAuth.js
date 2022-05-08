@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SingIn from '../SingIn/SingIn';
 import Loading from './Loading/Loading';
 
 const RequerAuth = ({children}) => {
@@ -16,7 +17,7 @@ const RequerAuth = ({children}) => {
       return <Loading></Loading>
     }
     if (!user) {
-        return navigate(from, {replace: true});
+        navigate('/singIn')
     }
 
     return children;

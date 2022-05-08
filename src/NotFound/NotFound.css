@@ -1,0 +1,8 @@
+.not__found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.not__found img{
+    padding: 30px;
+}

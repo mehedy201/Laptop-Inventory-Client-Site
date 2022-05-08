@@ -39,7 +39,6 @@ const SingUp = () => {
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name});
-        navigate(from, {replace: true});
     }
 
     let loadingElement;
@@ -49,8 +48,9 @@ const SingUp = () => {
                       </div>
     }
     if(user){
-        navigate(from, { replace: true });
-      }
+        navigate(from, {replace: true});
+    }
+
     let errorElement;
     if (error) {
       errorElement = <div> <p className='text-danger'>Error: {error?.message}</p></div>

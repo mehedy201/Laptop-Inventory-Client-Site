@@ -8,7 +8,8 @@ import SocialLogin from './SocialLogin/SocialLogin';
 
 const SingIn = () => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate('');
+    // Handle SingUp button
     const handleSingUpButton = () => {
         navigate('/singUp')
     }
@@ -33,20 +34,23 @@ const SingIn = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
-        console.log(email, password)
+        signInWithEmailAndPassword(email, password);
     }
     // Condition
-    if(user){
+      if(loading){
+        return <Loading></Loading>
+      }
+      if(user){
         navigate(from, {replace: true});
       }
       let errorElement;
       if(error){
         errorElement = <p className="text-danger my-3">{error?.message}</p>
       }
-      if(loading){
-        return <Loading></Loading>
-      }
+      
+
+    // Reset Password
+
 
 
     return (

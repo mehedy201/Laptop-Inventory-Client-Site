@@ -7,17 +7,18 @@ import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/a
 import auth from '../../../firebase.init';
 
 const SocialLogin = () => {
-    
-    const navigate = useNavigate()
+    //Use Navigate
+    const navigate = useNavigate('')
+    //Use location
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    // Sing In with Google
+    // Sing In with Google .............
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
-     // Sing In with Github 
+     // Sing In with Github ............
      const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
+    // Auth Condition 
     let loadingElement;
     if(loading || loading1){
       loadingElement = <div width='20px' class="spinner-grow text-primary" role="status">
@@ -31,6 +32,7 @@ const SocialLogin = () => {
     if (error || error1) {
       errorElement = <div> <p className='text-danger'>Error: {error?.message} {error1?.message}</p></div>
     }
+
     return (
         <div>
             <h5 className='text-center'>Sing In With</h5>
