@@ -12,6 +12,7 @@ import SingUp from './Pages/SingIn/SingUp/SingUp';
 import RequerAuth from './Pages/RequerAuth/RequerAuth';
 import Inventory from './Pages/Inventory/Inventory';
 import NotFound from './NotFound/NotFound';
+import SingleProduct from './Pages/Home/Products/SingleProduct/SingleProduct';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/blog' element={<Blog></Blog>}></Route>
-          <Route path='/inventory' element={
+          <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+          <Route path='/inventory/:productid' element={
             <RequerAuth>
-              <Inventory></Inventory>
+              <SingleProduct></SingleProduct>
             </RequerAuth>
           }></Route>
           <Route path='/add' element={
