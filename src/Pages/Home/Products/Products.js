@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useProducts from '../../../Hooks/useProducts';
 import Product from './Product.js/Product';
 
 const Products = () => {
@@ -10,14 +10,9 @@ const Products = () => {
         navigate('/inventory')
     }
 
-    // Use state and load Product from server
-    const [products, setProducts] = useState([]);
-    // Fetch Json Data
-    useEffect(() =>{
-        fetch('http://localhost:4000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
+    // Load Data using custom Hooks
+    const [products] = useProducts();
+
     return (
         <div className='container'>
             <div className="row gx-4 py-4">

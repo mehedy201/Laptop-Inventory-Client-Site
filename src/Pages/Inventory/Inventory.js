@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import useProducts from '../../Hooks/useProducts';
 import Product from '../Home/Products/Product.js/Product';
-import Products from '../Home/Products/Products';
+
 
 const Inventory = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
 
-        fetch('http://localhost:4000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    },[])
+    // Get Data using Custom hooks
+    const [products] = useProducts();
 
     return (
         <div className='container'>
