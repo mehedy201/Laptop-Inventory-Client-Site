@@ -9,7 +9,7 @@ const SingleProduct = () => {
     // Declare useState for Single Product
     const [singleProduct, setSingleProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:4000/products/${productid}`)
+        fetch(`https://pure-eyrie-65907.herokuapp.com/products/${productid}`)
             .then(res => res.json())
             .then(data => setSingleProduct(data))
     },[singleProduct]);
@@ -28,7 +28,7 @@ const SingleProduct = () => {
                 
                 
                 // Send Product data
-                const url = `http://localhost:4000/products/${productid}`;
+                const url = `https://pure-eyrie-65907.herokuapp.com/products/${productid}`;
                 fetch( url, {
                     method: 'PUT',
                     headers: {

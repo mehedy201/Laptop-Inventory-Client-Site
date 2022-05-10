@@ -16,7 +16,7 @@ const Manage = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to Delete');
         if(proceed){
-            const url = `http://localhost:4000/products/${id}`;
+            const url = `https://pure-eyrie-65907.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

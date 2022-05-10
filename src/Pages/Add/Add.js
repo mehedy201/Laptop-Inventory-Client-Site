@@ -26,7 +26,7 @@ const Add = () => {
         console.log(product);
         
         // Send Product data
-        const url = `http://localhost:4000/products`;
+        const url = `https://pure-eyrie-65907.herokuapp.com/products`;
         fetch( url, {
             method: 'POST',
             headers: {

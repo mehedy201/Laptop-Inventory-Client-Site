@@ -1,0 +1,16 @@
+.for_hieght{
+    height: 25rem !important;
+}
+.for_hieght .for_img_and_caption{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.for_hieght .for_img_and_caption .for_img_height{
+    width: 80%;
+    height: auto;
+}
+.for_hieght .for_img_and_caption .text-color{
+    color: rgb(240, 240, 240);
+    font-family: cursive;
+}
