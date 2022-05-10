@@ -25,7 +25,7 @@ const SingIn = () => {
     const passwordRef = useRef('');
     
     // Reset password
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const email = emailRef.current.value;
     const resetPassword = async () => {
         await sendPasswordResetEmail(email)
