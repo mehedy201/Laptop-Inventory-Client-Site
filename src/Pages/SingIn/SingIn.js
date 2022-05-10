@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../RequerAuth/Loading/Loading';
 import './SingIn.css'
 import SocialLogin from './SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SingIn = () => {
 
@@ -21,6 +24,16 @@ const SingIn = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     
+    // Reset password
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const email = emailRef.current.value;
+    const resetPassword = async () => {
+        await sendPasswordResetEmail(email)
+        toast('Send')
+    }
+    
+
+
     // Firebase Sing in method 
     const [
         signInWithEmailAndPassword,
@@ -65,10 +78,11 @@ const SingIn = () => {
                             <input ref={passwordRef} className='form-control' type="password" placeholder='Password' required/>
                             {errorElement}
                             <button className='btn btn-sm mt-3 w-50 d-block mx-auto bg-primary fw-bold text-white' type='submit'>Log In</button>
-                            <button className='btn btn-link p-0 pt-2'>Forget Password</button>
-                            <p>If don't have account <button className='btn btn-link py-0' onClick={handleSingUpButton}>Sing UP</button></p>
                         </form>
+                        <button onClick={resetPassword} className='btn btn-link p-0 pt-2'>Forget Password</button>
+                        <p>If don't have account <button className='btn btn-link py-0' onClick={handleSingUpButton}>Sing UP</button></p>
                         <SocialLogin></SocialLogin>
+                        <ToastContainer/>
                     </div>
                 </div>
             </div>
